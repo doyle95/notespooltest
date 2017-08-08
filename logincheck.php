@@ -6,20 +6,20 @@ $_SESSION["loggedInUser"] = $username;
 
     try {
         // open connection to MongoDB server
-        $conn = new Mongo('localhost');
+        $conn = new MongoClient();
 
         // access database
         $db = $conn->test;
 
         // access collection
-        $collection = $db->items;
+        $collection = $db->users;
 
 
         $userName = $_POST['email'];
         $userPass = $_POST['password'];
 
 
-        $user = $db->$collection->findOne(array('username'=> 'user1', 'password'=> 'pass1'));
+        $user = $db->$collection->findOne(array('userName'=> $userName, 'passWord'=> $userPass));
 
         foreach ($user as $obj) {
             echo 'Username' . $obj['username'];
