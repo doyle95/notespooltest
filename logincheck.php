@@ -1,7 +1,7 @@
 
 <?PHP
 
-$_SESSION["loggedInUser"] = $username;
+
 
 
     try {
@@ -42,6 +42,6 @@ $_SESSION["loggedInUser"] = $username;
         die('Error: ' . $e->getMessage());
     }
 
-$_SESSION["loggedInUser"] = $correct;
+
 
 ?>
